@@ -1,33 +1,19 @@
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
+import { Text, View } from "react-native";
 import { Link } from "expo-router";
+
+const LinkClassName = "underline text-blue-600 hover:text-blue-800 visited:text-purple-600";
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text style={styles.mainText}>
+    <View className="flex-1 items-center justify-center bg-black">
+      <Text className="text-3xl text-white">
         What's In My Fridge
       </Text>
       <StatusBar style="auto" />
-      <Link href="/shopping-list" style={styles.linkText}>
+      <Link className={LinkClassName} href="/shopping-list" >
         Go to Shopping List
       </Link>
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "black",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  mainText: {
-    color: "white",
-  },
-  linkText: {
-    color: "blue",
-    fontWeight: "bold",
-  }
-});

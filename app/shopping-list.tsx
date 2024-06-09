@@ -2,8 +2,8 @@ import { StyleSheet, Text, View } from 'react-native'
 
 const ShoppingList = () => {
   return (
-    <View style={styles.container}>
-      <Text style={styles.mainText}>
+    <View className="flex-1 items-center justify-center bg-black">
+      <Text className="text-3xl text-white">
         Shopping List Goes Here
       </Text>
     </View>
@@ -11,15 +11,3 @@ const ShoppingList = () => {
 }
 
 export default ShoppingList
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "black",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  mainText: {
-    color: "white",
-  },
-});
