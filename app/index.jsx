@@ -27,6 +27,9 @@ export default function App() {
             handlePress={() => {}}
             additionalContainerClass="w-[90%] p-3 mt-6"
           />
+          <Link className="text-4xl mt-6" href="/lists" style={{ color: "blue" }}>
+            LISTS
+          </Link>
         </View>
       </ScrollView>
       <StatusBar backgroundColor="bg-red-600" style="auto" />
