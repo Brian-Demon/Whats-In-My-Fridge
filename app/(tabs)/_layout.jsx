@@ -1,6 +1,10 @@
 import { View, Text, Image } from "react-native";
 import { Tabs } from "expo-router";
 import Icons from "../../constants/Icons";
+import { Colors } from "../../constants/Colors";
+
+const iconActiveColor = Colors.dark.activeIconHex;
+const iconInactiveColor = Colors.dark.inactiveIconHex;
 
 const TabIcon = ({
   icon,
@@ -19,7 +23,10 @@ const TabIcon = ({
         resizeMode="contain"
         tintColor={color}
       />
-      <Text className={`${focused ? "font-clashGrotesk" : "font-regular"} text-xs ${additionalTextClasses}`}>
+      <Text
+        className={`${focused ? "font-clashGrotesk" : "font-extralight"} text-xs ${additionalTextClasses}`}
+        style={{ color: color }}
+      >
         {name}
       </Text>
     </View>
@@ -31,7 +38,15 @@ export default function TabsLayout() {
     <>
       <Tabs
         screenOptions={{
-          tabBarShowLabel: false
+          tabBarShowLabel: false,
+          tabBarActiveTintColor: iconActiveColor,
+          tabBarInactiveTintColor: "#CDCDE0",
+          tabBarStyle: {
+            backgroundColor: iconInactiveColor,
+            borderTopWidth: 1,
+            borderTopColor: "#232533",
+            height: 84,
+          }
         }}
       >
         <Tabs.Screen

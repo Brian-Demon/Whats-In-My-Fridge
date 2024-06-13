@@ -1,13 +1,17 @@
-import { View, Text } from 'react-native'
-import React from 'react'
+import { View, Text } from "react-native";
+import React from "react";
+import { Colors } from "../../constants/Colors";
 
 export default Recipse = () => {
+
+  const textFont = "font-lufga";
+
   return (
-    <View className="bg-black w-full h-full items-center justify-center">
-      <Text className="text-white text-6xl">
+    <View className={`${Colors.dark.background} w-full h-full items-center justify-center`}>
+      <Text className={`${Colors.dark.text} ${textFont} text-6xl`}>
         Recipe
       </Text>
-      <Text className="text-white text-6xl">
+      <Text className={`${Colors.dark.text} ${textFont} text-6xl`}>
         Roulette
       </Text>
     </View>
