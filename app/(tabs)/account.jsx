@@ -1,19 +1,31 @@
 import { View, Text } from "react-native";
 import React from "react";
+import { Link } from "expo-router";
 import { Colors } from "../../constants/Colors";
 
-export default Account = () => {
-  
-  const textFont = "font-lufga";
+const background = Colors.dark.background;
+const font = "font-lufga";
+const textColor = "text-white";
 
+export default Account = () => {
   return (
-    <View className={`${Colors.dark.background} w-full h-full items-center justify-center`}>
-      <Text className={`${Colors.dark.text} ${textFont} text-6xl`}>
+    <View className={`${background} w-full h-full items-center justify-center`}>
+      <Text className={`${textColor} ${font} text-6xl`}>
         Account
       </Text>
-      <Text className={`${Colors.dark.text} ${textFont} text-6xl`}>
+      <Text className={`${textColor} ${font} text-6xl`}>
         Setting
       </Text>
+
+      <View className={`flex justify-center pt-5 flex-row gap-2`}>
+        <Link
+          href="/"
+          className={`text-lg ${textColor} ${font}`}
+        >
+          Home
+        </Link>
+      </View>
+
     </View>
   )
 }
