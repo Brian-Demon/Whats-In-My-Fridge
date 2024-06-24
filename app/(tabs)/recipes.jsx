@@ -5,7 +5,7 @@ import { Colors } from "../../constants/Colors";
 
 const background = Colors.dark.background;
 const font = "font-lufga";
-const textColor = "text-white";
+const textColor = Colors.dark.text;
 
 export default Recipse = () => {
   return (
