@@ -1,34 +1,40 @@
 import { StatusBar } from "expo-status-bar";
 import { ScrollView, Text, View } from "react-native";
-import { Link } from "expo-router";
-import Button from "../components/FormControls/Button";
+import { Link, useRouter } from "expo-router";
+import { SafeAreaView } from "react-native-safe-area-context";
 import { Colors } from "../constants/Colors";
-import { SafeAreaFrameContext, SafeAreaView } from "react-native-safe-area-context";
+import Button from "../components/Button";
 
 const LinkClassName = "underline text-blue-600 hover:text-blue-800 visited:text-purple-600";
+const background = Colors.dark.background;
+const font = "font-lufga";
+const textColor = Colors.dark.text;
+  
+export default function App() {
 
-export default function App() {  
+  const router = useRouter();
+
   return (
-    <SafeAreaView className="bg-gray-900 h-full">
+    <SafeAreaView className={`${background} h-full`}>
       <ScrollView contentContainerStyle={{ height: "100%" }}>
         <View className="w-full justify-center items-center h-full px-4">
-          <Text className={`${Colors.dark.text} text-6xl font-lufga`}>
+          <Text className={`${textColor} text-6xl ${font}`}>
             What's In
           </Text>
-          <Text className={`${Colors.dark.text} text-6xl mb-10 font-lufga`}>
+          <Text className={`${textColor} text-6xl mb-10 ${font}`}>
             My Fridge
           </Text>
           <Button
             title="Log In"
-            handlePress={() => {}}
+            handlePress={() => {router.push("/(auth)/sign-in")}}
             additionalContainerClass="w-[90%] p-3 mt-3"
           />
           <Button
             title="Sign Up"
-            handlePress={() => {}}
+            handlePress={() => {router.push("/(auth)/sign-up")}}
             additionalContainerClass="w-[90%] p-3 mt-6"
           />
-          <Link className={`${Colors.dark.text} text-4xl mt-6`} href="/lists">
+          <Link className={`${textColor} text-4xl mt-6`} href="/lists">
             LISTS
           </Link>
         </View>
